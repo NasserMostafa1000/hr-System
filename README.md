@@ -1,84 +1,64 @@
-Human Resources Management System
+# HR Management System
 
-A comprehensive system for managing companies and employees with tracking of passport, ID, and license expirations.
+A comprehensive system for managing companies and employees, with tracking of passport, ID, and license expiry dates.
 
-Features
+## Features
 
-✅ Login
+- ✅ Login
+- ✅ Add and manage companies
+- ✅ Add and manage employees
+- ✅ Upload images (profile photo, passport, ID)
+- ✅ Comprehensive statistics:
+  - Number of employees in each company
+  - Employees whose passports are about to expire
+  - Employees whose IDs are about to expire
+  - Companies whose licenses are about to expire
+- ✅ View statistics for a specific company
 
-✅ Add and manage companies
+## Technologies Used
 
-✅ Add and manage employees
+### Backend
 
-✅ Upload images (profile photo, passport, ID)
+- ASP.NET Core 8.0 Web API
+- Entity Framework Core
+- SQL Server
+- BCrypt for password hashing/verification
 
-✅ Comprehensive statistics:
+### Frontend
 
-Number of employees in each company
+- React.js 18
+- Vite
+- Tailwind CSS
+- React Router
+- Axios
 
-Employees whose passports are about to expire
+## Requirements
 
-Employees whose IDs are about to expire
+- .NET 8.0 SDK
+- Node.js 18+ and npm
+- SQL Server (LocalDB أو SQL Server Express)
 
-Companies whose licenses are about to expire
+## How to Run
 
-✅ View statistics for a specific company
+### 1. Run Backend
 
-Technologies Used
-Backend
-
-ASP.NET Core 8.0 Web API
-
-Entity Framework Core
-
-SQL Server
-
-BCrypt for password verification
-
-Frontend
-
-React.js 18
-
-Vite
-
-Tailwind CSS
-
-React Router
-
-Axios
-
-System Requirements
-
-.NET 8.0 SDK
-
-Node.js 18+ and npm
-
-SQL Server (LocalDB or SQL Server Express)
-
-Setup Steps
-1. Run Backend
 cd HrSystem.API
 dotnet restore
-dotnet run
+dotnet runThe API will run on `http://localhost:5000`.
 
+### 2. Run Frontend
 
-The API will run on http://localhost:5000
-
-2. Run Frontend
 cd frontend
 npm install
-npm run dev
+npm run devThe app will run on `http://localhost:5173`.
 
+## Default Login Credentials
 
-The application will run on http://localhost:5173
+- **Username:** admin  
+- **Password:** admin123
 
-Default Login Credentials
+## Project Structure
 
-Username: admin
-
-Password: admin123
-
-Project Structure
 HrSystem/
 ├── HrSystem.API/          # Backend API
 │   ├── Controllers/       # API Controllers
@@ -94,53 +74,40 @@ HrSystem/
     │   ├── pages/         # Page Components
     │   ├── context/       # React Context
     │   └── App.jsx        # Main App Component
-    └── package.json
+    └── package.json## API Endpoints
 
-API Endpoints
-Authentication
+### Authentication
 
-POST /api/auth/login - Login
+- `POST /api/auth/login` – Login
+- `POST /api/auth/register` – Register a new account
 
-POST /api/auth/register - Register a new account
+### Companies
 
-Companies
+- `GET /api/companies` – Get all companies
+- `GET /api/companies/{id}` – Get a specific company
+- `POST /api/companies` – Add a new company
+- `PUT /api/companies/{id}` – Update a company
+- `DELETE /api/companies/{id}` – Delete a company
 
-GET /api/companies - Get all companies
+### Employees
 
-GET /api/companies/{id} - Get a specific company
+- `GET /api/employees` – Get all employees
+- `GET /api/employees/{id}` – Get a specific employee
+- `POST /api/employees` – Add a new employee (with file uploads)
+- `PUT /api/employees/{id}` – Update an employee
+- `DELETE /api/employees/{id}` – Delete an employee
 
-POST /api/companies - Add a new company
+### Statistics
 
-PUT /api/companies/{id} - Update a company
+- `GET /api/statistics` – Get global statistics
+- `GET /api/statistics/company/{companyId}` – Get statistics for a specific company
 
-DELETE /api/companies/{id} - Delete a company
+## Notes
 
-Employees
+- Uploaded files are stored in `wwwroot/uploads/`.
+- The database is created automatically on first run.
+- A default user is created automatically if it does not exist.
 
-GET /api/employees - Get all employees
+## License
 
-GET /api/employees/{id} - Get a specific employee
-
-POST /api/employees - Add a new employee (with file uploads)
-
-PUT /api/employees/{id} - Update an employee
-
-DELETE /api/employees/{id} - Delete an employee
-
-Statistics
-
-GET /api/statistics - Get general statistics
-
-GET /api/statistics/company/{companyId} - Get statistics for a specific company
-
-Notes
-
-Uploaded files are stored in wwwroot/uploads/
-
-The database is automatically created on first run
-
-A default user is automatically created if not found
-
-License
-
-This project is open source and free to use.
+This project is open source and available for free use.
