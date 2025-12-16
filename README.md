@@ -1,6 +1,6 @@
 Human Resources Management System
 
-A comprehensive system for managing companies and employees, with tracking of passport, ID, and license expiration dates.
+A comprehensive system for managing companies and employees with tracking of passport, ID, and license expirations.
 
 Features
 
@@ -47,7 +47,7 @@ React Router
 
 Axios
 
-Requirements
+System Requirements
 
 .NET 8.0 SDK
 
@@ -55,7 +55,7 @@ Node.js 18+ and npm
 
 SQL Server (LocalDB or SQL Server Express)
 
-How to Run
+Setup Steps
 1. Run Backend
 cd HrSystem.API
 dotnet restore
@@ -101,7 +101,7 @@ Authentication
 
 POST /api/auth/login - Login
 
-POST /api/auth/register - Register a new user
+POST /api/auth/register - Register a new account
 
 Companies
 
@@ -121,7 +121,7 @@ GET /api/employees - Get all employees
 
 GET /api/employees/{id} - Get a specific employee
 
-POST /api/employees - Add a new employee (with file upload)
+POST /api/employees - Add a new employee (with file uploads)
 
 PUT /api/employees/{id} - Update an employee
 
