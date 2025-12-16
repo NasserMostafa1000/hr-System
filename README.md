@@ -74,7 +74,7 @@ HrSystem/
     │   ├── pages/         # Page Components
     │   ├── context/       # React Context
     │   └── App.jsx        # Main App Component
-    └── package.json## API Endpoints
+    └── package.json
 
 ### Authentication
 
