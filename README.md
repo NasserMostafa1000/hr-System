@@ -4,17 +4,17 @@ A comprehensive system for managing companies and employees, with tracking of pa
 
 Features
 
-✅ User authentication (login)
+✅ Login
 
 ✅ Add and manage companies
 
 ✅ Add and manage employees
 
-✅ Upload files (profile photo, passport, ID)
+✅ Upload images (profile photo, passport, ID)
 
 ✅ Comprehensive statistics:
 
-Number of employees per company
+Number of employees in each company
 
 Employees whose passports are about to expire
 
@@ -33,7 +33,7 @@ Entity Framework Core
 
 SQL Server
 
-BCrypt for password hashing
+BCrypt for password verification
 
 Frontend
 
@@ -56,21 +56,21 @@ Node.js 18+ and npm
 SQL Server (LocalDB or SQL Server Express)
 
 How to Run
-1. Run the Backend
+1. Run Backend
 cd HrSystem.API
 dotnet restore
 dotnet run
 
 
-The API will run at: http://localhost:5000
+The API will run on http://localhost:5000
 
-2. Run the Frontend
+2. Run Frontend
 cd frontend
 npm install
 npm run dev
 
 
-The frontend will run at: http://localhost:5173
+The application will run on http://localhost:5173
 
 Default Login Credentials
 
@@ -131,7 +131,7 @@ Statistics
 
 GET /api/statistics - Get general statistics
 
-GET /api/statistics/company/{companyId} - Get company-specific statistics
+GET /api/statistics/company/{companyId} - Get statistics for a specific company
 
 Notes
 
@@ -139,8 +139,8 @@ Uploaded files are stored in wwwroot/uploads/
 
 The database is automatically created on first run
 
-A default admin user is automatically created if none exists
+A default user is automatically created if not found
 
 License
 
-This project is open-source and free to use.
+This project is open source and free to use.
