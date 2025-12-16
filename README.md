@@ -1,71 +1,84 @@
-# نظام إدارة الموارد البشرية
+Human Resources Management System
 
-نظام شامل لإدارة الشركات والموظفين مع تتبع انتهاء الجوازات والهويات والرخص.
+A comprehensive system for managing companies and employees, with tracking of passport, ID, and license expiration dates.
 
-## المميزات
+Features
 
-- ✅ تسجيل الدخول
-- ✅ إضافة وإدارة الشركات
-- ✅ إضافة وإدارة الموظفين
-- ✅ رفع الصور (الصورة الشخصية، جواز السفر، الهوية)
-- ✅ إحصائيات شاملة:
-  - عدد الموظفين في كل شركة
-  - الموظفين الذين قاربت جوازات سفرهم على الانتهاء
-  - الموظفين الذين قاربت هوياتهم على الانتهاء
-  - الشركات التي قاربت رخصها على الانتهاء
-- ✅ عرض إحصائيات شركة محددة
+✅ User authentication (login)
 
-## التقنيات المستخدمة
+✅ Add and manage companies
 
-### Backend
-- ASP.NET Core 8.0 Web API
-- Entity Framework Core
-- SQL Server
-- BCrypt للتحقق من كلمات المرور
+✅ Add and manage employees
 
-### Frontend
-- React.js 18
-- Vite
-- Tailwind CSS
-- React Router
-- Axios
+✅ Upload files (profile photo, passport, ID)
 
-## متطلبات التشغيل
+✅ Comprehensive statistics:
 
-- .NET 8.0 SDK
-- Node.js 18+ و npm
-- SQL Server (LocalDB أو SQL Server Express)
+Number of employees per company
 
-## خطوات التشغيل
+Employees whose passports are about to expire
 
-### 1. تشغيل Backend
+Employees whose IDs are about to expire
 
-```bash
+Companies whose licenses are about to expire
+
+✅ View statistics for a specific company
+
+Technologies Used
+Backend
+
+ASP.NET Core 8.0 Web API
+
+Entity Framework Core
+
+SQL Server
+
+BCrypt for password hashing
+
+Frontend
+
+React.js 18
+
+Vite
+
+Tailwind CSS
+
+React Router
+
+Axios
+
+Requirements
+
+.NET 8.0 SDK
+
+Node.js 18+ and npm
+
+SQL Server (LocalDB or SQL Server Express)
+
+How to Run
+1. Run the Backend
 cd HrSystem.API
 dotnet restore
 dotnet run
-```
 
-سيتم تشغيل API على `http://localhost:5000`
 
-### 2. تشغيل Frontend
+The API will run at: http://localhost:5000
 
-```bash
+2. Run the Frontend
 cd frontend
 npm install
 npm run dev
-```
 
-سيتم تشغيل التطبيق على `http://localhost:5173`
 
-## بيانات الدخول الافتراضية
+The frontend will run at: http://localhost:5173
 
-- **اسم المستخدم:** admin
-- **كلمة المرور:** admin123
+Default Login Credentials
 
-## هيكل المشروع
+Username: admin
 
-```
+Password: admin123
+
+Project Structure
 HrSystem/
 ├── HrSystem.API/          # Backend API
 │   ├── Controllers/       # API Controllers
@@ -82,39 +95,52 @@ HrSystem/
     │   ├── context/       # React Context
     │   └── App.jsx        # Main App Component
     └── package.json
-```
 
-## API Endpoints
+API Endpoints
+Authentication
 
-### Authentication
-- `POST /api/auth/login` - تسجيل الدخول
-- `POST /api/auth/register` - إنشاء حساب جديد
+POST /api/auth/login - Login
 
-### Companies
-- `GET /api/companies` - الحصول على جميع الشركات
-- `GET /api/companies/{id}` - الحصول على شركة محددة
-- `POST /api/companies` - إضافة شركة جديدة
-- `PUT /api/companies/{id}` - تحديث شركة
-- `DELETE /api/companies/{id}` - حذف شركة
+POST /api/auth/register - Register a new user
 
-### Employees
-- `GET /api/employees` - الحصول على جميع الموظفين
-- `GET /api/employees/{id}` - الحصول على موظف محدد
-- `POST /api/employees` - إضافة موظف جديد (مع رفع الملفات)
-- `PUT /api/employees/{id}` - تحديث موظف
-- `DELETE /api/employees/{id}` - حذف موظف
+Companies
 
-### Statistics
-- `GET /api/statistics` - الحصول على الإحصائيات العامة
-- `GET /api/statistics/company/{companyId}` - الحصول على إحصائيات شركة محددة
+GET /api/companies - Get all companies
 
-## ملاحظات
+GET /api/companies/{id} - Get a specific company
 
-- يتم حفظ الملفات المرفوعة في `wwwroot/uploads/`
-- قاعدة البيانات يتم إنشاؤها تلقائياً عند أول تشغيل
-- يتم إنشاء مستخدم افتراضي تلقائياً إذا لم يكن موجوداً
+POST /api/companies - Add a new company
 
-## الترخيص
+PUT /api/companies/{id} - Update a company
 
-هذا المشروع مفتوح المصدر ومتاح للاستخدام الحر.
+DELETE /api/companies/{id} - Delete a company
 
+Employees
+
+GET /api/employees - Get all employees
+
+GET /api/employees/{id} - Get a specific employee
+
+POST /api/employees - Add a new employee (with file upload)
+
+PUT /api/employees/{id} - Update an employee
+
+DELETE /api/employees/{id} - Delete an employee
+
+Statistics
+
+GET /api/statistics - Get general statistics
+
+GET /api/statistics/company/{companyId} - Get company-specific statistics
+
+Notes
+
+Uploaded files are stored in wwwroot/uploads/
+
+The database is automatically created on first run
+
+A default admin user is automatically created if none exists
+
+License
+
+This project is open-source and free to use.
