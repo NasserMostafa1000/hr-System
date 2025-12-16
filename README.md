@@ -50,7 +50,7 @@ dotnet runThe API will run on `http://localhost:5000`.
 
 cd frontend
 npm install
-npm run devThe app will run on `http://localhost:5173`.
+npm run dev The app will run on `http://localhost:5173`.
 
 ## Default Login Credentials
 
